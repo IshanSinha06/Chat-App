@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(35, 25, 25);
+  background-image: url(https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png);
+}
+
+.forgot-page {
+  padding: 50px 20px;
+  width: 500px;
+  color: whitesmoke;
+  background-image: linear-gradient(to bottom, #262626, #808080, #684747);
+  border-radius: 10px;
+}
+
+.forgot-page h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.forgot-page .email-input,
+.forgot-page .username-input {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin: 40px 0;
+}
+
+.email-input input,
+.username-input input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid gray;
+  border-radius: 20px;
+  padding: 20px 40px 20px 20px;
+  font-size: 1.2rem;
+}
+
+.email-input input:hover .username-input input:hover {
+  background-color: rgb(171, 167, 167);
+}
+
+.email-input input::placeholder,
+.username-input input::placeholder {
+  color: rgb(213, 213, 213);
+  font-size: 1.2rem;
+}
+
+.email-input i,
+.username-input i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+}
+
+.forgot-page .btn {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.1rem;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.forgot-page .btn:hover {
+  background-color: #808080;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .forgot-page {
+    margin-right: 75px;
+  }
+}
+
+@media (max-width: 900px) {
+  .forgot-page {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 790px) {
+  .forgot-page {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+  }
+  .forgot-page {
+    right: 0;
+    bottom: 0;
+    margin-right: 0;
+    border-radius: 0;
+    width: 100vw;
+    height: 100%;
+  }
+}

@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1b1b32;
+}
+
+.login-page {
+  padding: 20px;
+  width: 400px;
+  color: whitesmoke;
+  background-color: #00000076;
+  border-radius: 2rem;
+}
+
+.login-page h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.login-page .username-input,
+.login-page .password-input {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin: 20px 0;
+}
+
+.username-input input,
+.password-input input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 0.1rem solid #4e0eff;
+  border-radius: 20px;
+  padding: 20px 40px 20px 20px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.username-input input:hover,
+.password-input input:hover {
+  border: 0.1rem solid #997af0;
+}
+
+.username-input input::placeholder,
+.password-input input::placeholder {
+  color: rgb(213, 213, 213);
+  font-size: 1.2rem;
+}
+
+.username-input i,
+.password-input i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+}
+
+.login-page .btn {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  background-color: #997af0;
+  font-size: 1.1rem;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.login-page .btn:hover {
+  background-color: #a58ceb;
+}
+
+.login-page .new-registration {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-page .new-registration .new-user {
+  margin-top: 20px;
+}
+
+.login-page .new-registration p {
+  /* color: black; */
+  font-weight: 500;
+}
+
+.forgot a {
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .login-page {
+    margin-right: 75px;
+  }
+}
+
+@media (max-width: 900px) {
+  .login-page {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 790px) {
+  .login-page {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+  }
+  .login-page {
+    right: 0;
+    bottom: 0;
+    margin-right: 0;
+    border-radius: 0;
+    width: 100vw;
+    height: 100%;
+  }
+}

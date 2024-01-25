@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/temporary.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <% if (alertMessage) { %>
+        <div class="alert" style="color: rgb(255, 157, 0)">
+          <strong><%= alertMessage %></strong>
+        </div>
+        <% } %>
+      <div class="reset-page">
+        <form action="/temporary/{{token}}" method="post">
+          <h1 class="resetPassword">Reset Password</h1>
+          <div class="temporary password-input">
+            <input
+              type="password"
+              name="temporaryPassword"
+              placeholder="Temporary Password"
+            /><i class="bx bxs-lock"></i>
+          </div>
+          <div class="password-input">
+            <input
+              type="password"
+              name="newPassword"
+              placeholder="New Password"
+            /><i class="bx bxs-lock"></i>
+          </div>
+          <div class="password-input">
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+            /><i class="bx bxs-lock"></i>
+          </div>
+          <button
+            class="reset-password btn"
+            type="submit"
+            {{! onclick="resetFormAndRedirect()" }}
+          >Reset</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+    <link rel="stylesheet" href="/signup.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <% if (alertMessage) { %>
+        <div class="alert" style="color: rgb(255, 157, 0)">
+          <strong><%= alertMessage %></strong>
+        </div>
+        <% } %>
+
+    <div class="wrapper">
+      <div class="signup-page">
+        <form action="/signup" method="post">
+          <h1 class="login">SignUp</h1>
+          <div class="username-input">
+            <input type="text" name="name" placeholder="Username" /><i
+              class="bx bxs-user"
+            ></i>
+          </div>
+          <div class="password-input">
+            <input type="password" name="password" placeholder="Password" /><i
+              class="bx bxs-lock"
+            ></i>
+          </div>
+          <div class="email-input">
+            <input type="email" name="email" placeholder="Email id" /><i
+              class="bx bxs-envelope"
+            ></i>
+          </div>
+          <button class="submit-login btn" type="submit">SignUp</button>
+
+          <div class="new-registration">
+            <hr />
+            <p class="new-user">Already a user? <a href="/">LogIn</a></p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

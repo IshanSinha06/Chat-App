@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forgotten Password</title>
+    <link rel="stylesheet" href="/forgot.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <% if (alertMessage) { %>
+        <div class="alert" style="color: rgb(255, 157, 0)">
+          <strong><%= alertMessage %></strong>
+        </div>
+        <% } %>
+      <div class="forgot-page">
+        <form action="/forgot" method="post">
+          <h1 class="forgotPassword">Confirm Email-Id</h1>
+
+          <div class="email-input">
+            <input type="email" name="email" placeholder="Email" /><i
+              class="bx bxs-envelope"
+            ></i>
+          </div>
+          <div class="username-input">
+            <input type="text" name="name" placeholder="Username" /><i
+              class="bx bxs-user"
+            ></i>
+
+          </div>
+          <button class="submit-login btn" type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
