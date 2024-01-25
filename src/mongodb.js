@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 // Connect the node to the mongodb database with the name "Chatbot".
 
 mongoose
-  .connect("mongodb://localhost:27017/Chatbot")
+  .connect("mongodb+srv://ishansinha1990:Impossible1234@cluster0.pclav4r.mongodb.net/?retryWrites=true&w=majority")
 
   // When it is connected
   .then(() => {
