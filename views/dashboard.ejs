@@ -158,7 +158,6 @@
           $(".user-list").removeClass("highlighted");
           var userId = $(this).attr("data-id");
           receiver_id = userId;
-          console.log("onlick receiver id", receiver_id);
           $(this).toggleClass("highlighted");
           $(".start-head").hide();
           $(".chat-section").show();
@@ -172,7 +171,6 @@
 
       // Update online status
       socket.on("getOnlineUser", function (data) {
-        console.log(data.user_id);
         // $("#" + data.user_id + "-status").css("color", "#fff");
         // $("#" + data.user_id + "-status").css("color", "#00bf00");
         $("#" + data.user_id + "-status").removeClass("offline");
@@ -231,13 +229,9 @@
       // To show new chat
       socket.on("loadNewChat", function (data) {
         if (sender_id === data.receiver_id && receiver_id === data.sender_id) {
-          console.log("Received 'loadNewChat' event:", data.message);
           let html = `<div class="receiver" id = "${data._id}">
                       <h5> ${data.message}</h5>
                     </div>`;
-
-          console.log("Received 'loadNewChat' html:", html);
-
           $(".chat-container").append(html);
         } else {
           console.log(
@@ -298,7 +292,6 @@
       $("#delete-chat-form").submit(function (event) {
         event.preventDefault();
         var id = $("#delete-message-id").val();
-        console.log("chat id is", id);
 
         $.ajax({
           url: "/delete-chat",
