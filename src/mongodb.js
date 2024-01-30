@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const crypto = require("crypto");
 
 // Connect the node to the mongodb database with the name "Chatbot".
 
@@ -33,7 +34,29 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: 0,
   },
+  temporaryPassword: { type: String },
+  temporaryPasswordExpires: { type: Date },
 });
+
+//  Creating new schema inside user schema which will hold the new password token.
+userSchema.methods.createResetPasswordToken = function () {
+  // This reset token will not be encrpted.
+  const resetToken = crypto.randomBytes(12).toString("hex");
+
+  // Encrypting the reset token.
+  this.temporaryPassword = crypto
+    .createHash("sha256")
+    .update(resetToken)
+    .digest("hex");
+
+  this.temporaryPasswordExpires = Date.now() + 10 * 60 * 1000;
+
+  console.log(
+    `reset token in hex ${resetToken} and encrpted is ${this.temporaryPassword}`
+  );
+
+  return resetToken;
+};
 
 const collection = new mongoose.model("User", userSchema);
 
